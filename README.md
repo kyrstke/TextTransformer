@@ -1,10 +1,4 @@
 # TextTransformer
-IO IO IO
+## IO IO IO
 
-Filip Kokosza - Scrum Master
-
-Jan Kabziński - Proxy Product Owner
-
-Krystian Jakusik - Developer
-
-Anastasiaa Trubchaninova - Developer
+Role w zespole:  Filip Kokosza - Scrum Master  Jan Kabziński - Proxy Product Owner  Krystian Jakusik - Developer  Anastasiia Trubchaninova - Developer
