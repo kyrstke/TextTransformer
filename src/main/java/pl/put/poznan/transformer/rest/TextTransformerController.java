@@ -5,29 +5,39 @@ import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.TextTransformer;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 
 @RestController
-@RequestMapping("/{text}")
+@RequestMapping("/{trans}/{text}")
 public class TextTransformerController {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
+    public String get(@PathVariable String trans, @PathVariable String text,
                               @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
 
         // log the parameters
         logger.debug(text);
         logger.debug(Arrays.toString(transforms));
 
-        // perform the transformation, you should run your logic here, below is just a silly example
-        TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+        if(Objects.equals(trans, "upper")) {
+            // perform the transformation, you should run your logic here, below is just a silly example
+            TextTransformer transformer = new TextTransformer(transforms);
+            return transformer.transform(text);
+        }
+        else if (Objects.equals(trans, "inverse"))
+        {
+            TextTransformer transformer = new TextTransformer(transforms);
+            return transformer.transform(text);
+        }
+        else
+        return null;
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
+    public String post(@PathVariable  String trans, @PathVariable String text,
                       @RequestBody String[] transforms) {
 
         // log the parameters
@@ -35,8 +45,18 @@ public class TextTransformerController {
         logger.debug(Arrays.toString(transforms));
 
         // perform the transformation, you should run your logic here, below is just a silly example
-        TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+        if(Objects.equals(trans, "upper")) {
+            // perform the transformation, you should run your logic here, below is just a silly example
+            TextTransformer transformer = new TextTransformer(transforms);
+            return transformer.transform(text);
+        }
+        else if (Objects.equals(trans, "inverse"))
+        {
+            TextTransformer transformer = new TextTransformer(transforms);
+            return transformer.transform(text);
+        }
+        else
+            return null;
     }
 
 
