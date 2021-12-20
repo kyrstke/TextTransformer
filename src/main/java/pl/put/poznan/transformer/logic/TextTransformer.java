@@ -6,7 +6,7 @@ package pl.put.poznan.transformer.logic;
 public class TextTransformer {
 
     private final String[] transforms;
-
+    /**transforms has name of transformation in it**/
     public TextTransformer(String[] transforms){
         this.transforms = transforms;
     }
