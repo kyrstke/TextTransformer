@@ -14,6 +14,11 @@ jobs:
           
       - name: Delete previous jars
         run: mvn clean install
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+         name: TextTransformer
+         path: TextTransformer/target/**
    
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
