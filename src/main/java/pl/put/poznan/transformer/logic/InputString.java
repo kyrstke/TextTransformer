@@ -13,7 +13,6 @@ public class InputString implements IText{
 
     @Override
     public String transform(){
-        // of course, normally it would do something based on the transforms
         return this.text;
     }
 }

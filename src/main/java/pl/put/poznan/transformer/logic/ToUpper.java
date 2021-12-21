@@ -7,6 +7,11 @@ public class ToUpper extends TextTransformer{
     }
     @Override
     public String transform(){
-        return super.transform().toUpperCase();
+        return toUpper(super.transform());
+    }
+
+    private String toUpper(String text)
+    {
+        return text.toUpperCase();
     }
 }

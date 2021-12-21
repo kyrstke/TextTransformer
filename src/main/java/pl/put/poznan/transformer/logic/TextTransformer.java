@@ -5,12 +5,9 @@ package pl.put.poznan.transformer.logic;
  */
 public abstract class TextTransformer implements IText {
 
-    //private final String[] transforms;
-    private IText textInput;
-    //private final String[] transforms;
+    protected IText textInput;
     public TextTransformer(IText textInput) {
         this.textInput = textInput;
-        //this.transforms = transforms;
     }
 
     @Override

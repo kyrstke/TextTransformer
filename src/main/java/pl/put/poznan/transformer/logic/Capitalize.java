@@ -1,4 +1,5 @@
 package pl.put.poznan.transformer.logic;
+import org.apache.commons.lang.WordUtils;
 
 public class Capitalize extends TextTransformer{
 
@@ -7,16 +8,12 @@ public class Capitalize extends TextTransformer{
     }
     @Override
     public String transform(){
-        return Capitalize(super.transform());
+        return capitalize(super.transform());
     }
 
-    private String Capitalize(String text)
+    private String capitalize(String text)
     {
-        /*if(text.length() > 0) {
-            text[0] =;
-            for (int i = 1; i < text.length(); i++)
-        }*/
-        return text;
+        return WordUtils.capitalizeFully(text);
     }
 
 }

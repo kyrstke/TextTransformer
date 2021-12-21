@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/io-project-architecture.iml" filepath="$PROJECT_DIR$/io-project-architecture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ioprojectarchitecture.iml" filepath="$PROJECT_DIR$/ioprojectarchitecture.iml" />
     </modules>
   </component>
 </project>
