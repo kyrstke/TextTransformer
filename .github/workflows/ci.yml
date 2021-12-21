@@ -11,5 +11,14 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
           cache: maven
+          
+      - name: Delete previous jars
+        run: mvn clean
+          
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging
