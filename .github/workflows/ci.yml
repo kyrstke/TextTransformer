@@ -14,8 +14,7 @@ jobs:
           
       - name: Delete previous jars
         run: mvn clean install
-      - name: Build with Maven
-        run: mvn package --file pom.xml   
+   
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
         
