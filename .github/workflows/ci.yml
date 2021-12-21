@@ -13,12 +13,12 @@ jobs:
           cache: maven
           
       - name: Delete previous jars
-        run: mvn clean install
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
+        run: mvn clean
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v2
         with:
-         name: TextTransformer
-         path: TextTransformer/target/**
+          name: Package
+          path: staging
    
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
