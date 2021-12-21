@@ -13,7 +13,7 @@ jobs:
           cache: maven
           
       - name: Delete previous jars
-        run: mvn clean
+        run: mvn clean install
           
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
