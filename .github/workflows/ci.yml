@@ -12,13 +12,9 @@ jobs:
           distribution: 'adopt'
           cache: maven
           
-      - name: Delete previous jars
-        run: mvn clean
-      - run: mkdir staging && cp target/*.jar staging
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: staging
+      - name: Delete previous jars and create jar file
+        run: mvn clean install
+ 
    
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
