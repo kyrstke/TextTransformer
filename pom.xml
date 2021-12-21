@@ -18,15 +18,11 @@
 
 	<name>TextTransformer</name>
 
-	<properties>
+<properties>
         <java.version>15</java.version>
 
 		<slf4j.version>1.7.30</slf4j.version>
 		<spring-data-releasetrain.version>Moore-SR6</spring-data-releasetrain.version>
-
-   
-    <properties>
-        <java.version>15</java.version>
     </properties>
 
 
