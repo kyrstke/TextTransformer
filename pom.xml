@@ -15,6 +15,7 @@
     <groupId>pl.put.poznan</groupId>
     <artifactId>TextTransformer</artifactId>
     <version>0.1</version>
+
 	<name>TextTransformer</name>
 
 	<properties>
@@ -22,6 +23,10 @@
 
 		<slf4j.version>1.7.30</slf4j.version>
 		<spring-data-releasetrain.version>Moore-SR6</spring-data-releasetrain.version>
+
+   
+    <properties>
+        <java.version>15</java.version>
     </properties>
 
 
@@ -84,6 +89,7 @@
 
 	<reporting>
 
+
 		<plugins>
 
 			<plugin>
@@ -117,6 +123,15 @@
 
 	</reporting>
 
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
 
     <build>
 		<finalName>TextTransformer</finalName>
@@ -155,95 +170,3 @@
 
 
 </project>
-
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
-<!--		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
-<!--	<modelVersion>4.0.0</modelVersion>-->
-<!--	<packaging>jar</packaging>-->
-
-
-
-<!--	<parent>-->
-<!--		<groupId>org.springframework.boot</groupId>-->
-<!--		<artifactId>spring-boot-starter-parent</artifactId>-->
-<!--		<version>2.3.3.RELEASE</version>-->
-<!--	</parent>-->
-
-<!--	<groupId>pl.put.poznan</groupId>-->
-<!--	<artifactId>TextTransformer</artifactId>-->
-<!--	<version>final</version>-->
-
-<!--	<properties>-->
-<!--		<java.version>11</java.version>-->
-<!--	</properties>-->
-
-
-<!--	<dependencies>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-web</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-devtools</artifactId>-->
-<!--		</dependency>-->
-
-
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-test</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--			<exclusions>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.junit.vintage</groupId>-->
-<!--					<artifactId>junit-vintage-engine</artifactId>-->
-<!--				</exclusion>-->
-<!--			</exclusions>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>com.jayway.jsonpath</groupId>-->
-<!--			<artifactId>json-path</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--	</dependencies>-->
-
-
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--			</plugin>-->
-<!--			<plugin>-->
-<!--				<groupId>org.apache.maven.plugins</groupId>-->
-<!--				<artifactId>maven-javadoc-plugin</artifactId>-->
-<!--				<version>3.1.1</version>-->
-<!--			</plugin>-->
-<!--		</plugins>-->
-<!--	</build>-->
-
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--			<id>spring-releases</id>-->
-<!--			<url>https://repo.spring.io/libs-release</url>-->
-<!--		</repository>-->
-<!--	</repositories>-->
-<!--	<pluginRepositories>-->
-<!--		<pluginRepository>-->
-<!--			<id>spring-releases</id>-->
-<!--			<url>https://repo.spring.io/libs-release</url>-->
-<!--		</pluginRepository>-->
-<!--	</pluginRepositories>-->
-
-
-<!--</project>-->
