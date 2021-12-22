@@ -1,0 +1,8 @@
+pl\put\poznan\transformer\logic\ToUpper.class
+pl\put\poznan\transformer\logic\InputString.class
+pl\put\poznan\transformer\logic\Capitalize.class
+pl\put\poznan\transformer\app\TextTransformerApplication.class
+pl\put\poznan\transformer\logic\IText.class
+pl\put\poznan\transformer\logic\ToLower.class
+pl\put\poznan\transformer\rest\TextTransformerController.class
+pl\put\poznan\transformer\logic\TextTransformer.class
