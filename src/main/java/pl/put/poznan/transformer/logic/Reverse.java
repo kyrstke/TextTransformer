@@ -1,6 +1,8 @@
 package pl.put.poznan.transformer.logic;
 
 
+import java.util.Locale;
+
 public class Reverse extends TextTransformer{
 
     public Reverse(IText textInput) {
@@ -13,7 +15,19 @@ public class Reverse extends TextTransformer{
 
     private String reverse(String text)
     {
-        return text;
+        String lowered = text.toLowerCase();
+        String out="";
+        char ch;
+        for (int i = 0; i < text.length(); i++)
+        {
+            ch = lowered.charAt(i);
+            if(Character.isUpperCase(text.charAt(text.length()-1-i)))
+            {
+                ch = Character.toUpperCase(ch);
+            }
+            out= ch+out;
+        }
+        return out;
     }
 }
 
