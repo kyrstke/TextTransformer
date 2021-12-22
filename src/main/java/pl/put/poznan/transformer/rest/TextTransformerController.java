@@ -28,7 +28,7 @@ public class TextTransformerController {
         return transformer.transform(text);
     }
 
-    @RequestMapping(value = "/TextTransform", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/TextTransform", method = RequestMethod.GET, produces = "application/json")
     public String get(@RequestBody trans_info transInfo) throws JSONException {
 
         // log the parameters
