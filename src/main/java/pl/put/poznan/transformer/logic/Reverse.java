@@ -29,5 +29,23 @@ public class Reverse extends TextTransformer{
         }
         return out;
     }
+//    String[] dividedText = text.split(" ");
+//    String[] inverted = new String[dividedText.length];
+//
+//        for (int j = 0; j < dividedText.length; j++) {
+//        String[] word = dividedText[j].split("");
+//        String[] result = new String[word.length];
+//
+//        for (int i = 0; i < word.length; i++) {
+//            if (Character.isUpperCase(word[i].charAt(0)))
+//                result[i] = upper(word[word.length - 1 - i]);
+//            else
+//                result[i] = lower(word[word.length - 1 - i]);
+//        };
+//
+//        inverted[j] = String.join("", result);
+//    }
+//
+//        return String.join(" ", inverted);
 }
 
