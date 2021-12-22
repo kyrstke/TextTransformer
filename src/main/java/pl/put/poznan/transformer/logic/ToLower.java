@@ -8,7 +8,7 @@ public class ToLower extends TextTransformer{
 
     @Override
     public String transform(String text){
-        return toLower(text);
+        return toLower(this.transInterface.transform(text));
     }
 
     private String toLower(String text)
