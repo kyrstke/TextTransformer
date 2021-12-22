@@ -17,13 +17,8 @@
     <version>0.1</version>
 
 
-	<name>TextTransformer</name>
-
 <properties>
         <java.version>15</java.version>
-
-		<slf4j.version>1.7.30</slf4j.version>
-		<spring-data-releasetrain.version>Moore-SR6</spring-data-releasetrain.version>
 </properties>
 
     <dependencies>
@@ -85,13 +80,13 @@
             <version>0.0.20131108.vaadin1</version>
             <scope>compile</scope>
         </dependency>
-        
+
         <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
           <version>4.12</version>
           <scope>test</scope>
-		    </dependency>
+        </dependency>
 
     </dependencies>
 
@@ -128,7 +123,7 @@
                 </configuration>
 				<version>3.1.1</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -150,19 +145,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>spring-boot</classifier>
-                            <mainClass>
-                                com.baeldung.executable.ExecutableMavenJar
-                            </mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

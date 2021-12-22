@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="io-project-architecture" target="15" />
       <module name="ioprojectarchitecture" target="15" />
     </bytecodeTargetLevel>
   </component>
