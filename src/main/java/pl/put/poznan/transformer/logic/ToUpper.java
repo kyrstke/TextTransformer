@@ -9,7 +9,7 @@ public class ToUpper extends TextTransformer{
      /**
      * Constructor of text transformation class.
      *
-     * @param textInput text to decorate
+     * @param transInterface text to decorate
      */
     public ToUpper(IText transInterface) {
         super(transInterface);
