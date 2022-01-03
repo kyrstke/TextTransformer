@@ -18,7 +18,7 @@ class ToSentenceTest {
     @Test
     public void testSentenceCase()
     {
-        String text = "Czuję się zaskoczony, zmieszany i wstrząśnięty. Zupełnie nie jak James Bond. Aha";
+        String text = "Czuję się zaskoczony, zmieszany i wstrząśnięty. Zupełnie nie jak ja. Aha";
         Assertions.assertEquals(text,textTransformer.transform(text));
     }
     @Test
