@@ -20,7 +20,8 @@ public class NumbersToText extends TextTransformer {
             try
             {
                 Float.parseFloat(word);
-                if ((Float.parseFloat(word)>1000)||(Float.parseFloat(word)<-1000)){
+                if ((Float.parseFloat(word)>1000)||(Float.parseFloat(word)<-1000))
+                {
                     resultBuilder.append(word).append(" ");
                     continue;
                 }
