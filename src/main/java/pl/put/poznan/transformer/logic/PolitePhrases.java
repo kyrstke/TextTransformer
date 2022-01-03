@@ -24,9 +24,11 @@ public class PolitePhrases extends TextTransformer{
             if(x > -1)
             {
                 if(x!=0)
-                text = text.substring(0,x-1) + goodPhrases[i] + text.substring(x+goodPhrases[i].length(), text.length()-1);
+                {
+                    text = text.substring(0,x) + goodPhrases[i] + text.substring(x+goodPhrases[i].length(), text.length());
+                }
                 else
-                    text = goodPhrases[i] + text.substring(goodPhrases[i].length(), text.length()-1);
+                    text = goodPhrases[i] + text.substring(goodPhrases[i].length(), text.length());
             }
         }
         return text;
