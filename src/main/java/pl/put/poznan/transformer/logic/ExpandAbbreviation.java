@@ -8,7 +8,7 @@ public class ExpandAbbreviation extends TextTransformer{
     @Override
     public String transform(String text){
 
-        return expandAbbreviation(text);
+        return expandAbbreviation(this.transInterface.transform(text));
     }
 
     private String expandAbbreviation(String text)

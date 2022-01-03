@@ -8,7 +8,7 @@ public class Capitalize extends TextTransformer{
     }
     @Override
     public String transform(String text){
-        return capitalize(text);
+        return capitalize(this.transInterface.transform(text));
     }
 
     private String capitalize(String text)

@@ -7,7 +7,7 @@ public class ToAbbreviation extends TextTransformer{
     }
     @Override
     public String transform(String text){
-        return toAbbreviation(text);
+        return toAbbreviation(this.transInterface.transform(text));
     }
 
     private String toAbbreviation(String text)

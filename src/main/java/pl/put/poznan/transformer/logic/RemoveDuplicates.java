@@ -6,7 +6,7 @@ public class RemoveDuplicates extends TextTransformer{
     }
     @Override
     public String transform(String text){
-        return removeDuplicates(text);
+        return removeDuplicates(this.transInterface.transform(text));
     }
 
     private String removeDuplicates(String text)
