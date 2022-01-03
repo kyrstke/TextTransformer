@@ -68,4 +68,13 @@ class NumbersToTextTest {
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
 
+    @Test
+    public void returnLongNumbers()
+    {
+        String text = "999.99 to prawie 1000 tak jak -1000 to prawie -999.99";
+        String result = "dziewięćset dziewięćdziesiąt dziewięć i dziewięćdziesiąt dziewięć setnych to prawie tysiąc tak " +
+                "jak minus tysiąc to prawie minus dziewięćset dziewięćdziesiąt dziewięć i dziewięćdziesiąt dziewięć setnych";
+
+        Assertions.assertEquals(result, textTransformer.transform(text));
+    }
 }
