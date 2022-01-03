@@ -71,6 +71,10 @@ public class NumbersToText extends TextTransformer {
         if (value<=4) {
             restBuilder.append(koncowki[value]);
         }
+        else if ((value > 10)&&(value < 20))
+        {
+            restBuilder.append(koncowki[0]);
+        }
         else if (((value-((value/10)*10))<=4)&&((value-((value/10)*10))>1))
         {
             restBuilder.append(koncowki[value-((value/10)*10)]);
