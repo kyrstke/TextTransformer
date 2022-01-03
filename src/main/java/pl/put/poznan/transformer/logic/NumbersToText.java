@@ -10,7 +10,7 @@ public class NumbersToText extends TextTransformer {
         return numbersToText(this.transInterface.transform(text));
     }
 
-    public String numbersToText(String text) {
+    private String numbersToText(String text) {
 
         String[] arr_text = text.split(" ");
         StringBuilder resultBuilder = new StringBuilder("");
@@ -39,7 +39,7 @@ public class NumbersToText extends TextTransformer {
         return resultBuilder.toString().trim();
     }
 
-    public String floatToText(String[] parts)
+    private String floatToText(String[] parts)
     {
         String[] koncowki = {"ych", "a", "e", "e", "e"};
         String[] czesci = {"dziesiąt", "setn"};
@@ -92,7 +92,7 @@ public class NumbersToText extends TextTransformer {
         }
 
     }
-    public String intToText(int number, Boolean rest) {
+    private String intToText(int number, Boolean rest) {
         String[] jednosci = {"zero", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"};
         String[] nastki = {"dziesięć", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"};
         String[] dziesiatki = {"dwadzieścia", "trzydzieści", "czterdzieści"};
