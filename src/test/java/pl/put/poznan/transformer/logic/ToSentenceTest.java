@@ -12,7 +12,7 @@ class ToSentenceTest {
     @BeforeEach
     public void setupTextTransformer()
     {
-        textTransformer = new NumbersToText(new InputString());
+        textTransformer = new ToSentence(new InputString());
     }
 
     @Test
