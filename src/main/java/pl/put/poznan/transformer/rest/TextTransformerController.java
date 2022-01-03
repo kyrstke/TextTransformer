@@ -55,6 +55,8 @@ public class TextTransformerController {
             case "num-to-text" -> new NumbersToText(transI);
             case "lower" -> new ToLower(transI);
             case "capitalize" -> new Capitalize(transI);
+            case "sentence" -> new ToSentence(transI);
+            case "phrases" -> new PolitePhrases(transI);
             default -> transI;
         };
     }
