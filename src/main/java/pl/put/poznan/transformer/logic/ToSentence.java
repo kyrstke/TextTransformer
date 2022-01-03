@@ -24,11 +24,12 @@ public class ToSentence extends TextTransformer{
                 answer += Character.toLowerCase(text.charAt(i));
             }
 
+            if(text.charAt(i) != ' ') {
+                istnienia = false;
+            }
+
             if(text.charAt(i) == '.') {
                 istnienia = true;
-            }
-            else if(text.charAt(i) != ' ') {
-                istnienia = false;
             }
         }
         return answer;

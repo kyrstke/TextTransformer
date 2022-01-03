@@ -1,5 +1,6 @@
 package pl.put.poznan.transformer.logic;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class PolitePhrasesTest {
     public void testCorrectText()
     {
         String text = "Ty, Tobą i w ogóle";
-        assertEquals(text,textTransformer.transform(text));
+        Assertions.assertEquals(text,textTransformer.transform(text));
     }
 
     @Test
@@ -27,20 +28,20 @@ class PolitePhrasesTest {
     {
         String text = "ciebie w tobie to raczej mało jest";
         String result = "Ciebie w Tobie to raczej mało jest";
-        assertEquals(result,textTransformer.transform(text));
+        Assertions.assertEquals(result,textTransformer.transform(text));
     }
 
     @Test
     public void testUpperCase()
     {
         String text = "CIEBIE CHYBA TO WYWRÓCIŁO";
-        assertEquals(text, textTransformer.transform(text));
+        Assertions.assertEquals(text, textTransformer.transform(text));
     }
     @Test
     public void testMixedCase()
     {
         String text = "TY, PoKEMOnowa czcioNkA dLa cIEBie, chyba";
-        assertEquals(text, textTransformer.transform(text));
+        Assertions.assertEquals(text, textTransformer.transform(text));
     }
 
 }
