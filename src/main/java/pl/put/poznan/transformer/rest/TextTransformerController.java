@@ -4,7 +4,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.transformer.json_format.trans_info;
+import pl.put.poznan.transformer.json_format.transInfo;
 import pl.put.poznan.transformer.logic.*;
 
 import java.util.Arrays;
@@ -27,14 +27,14 @@ public class TextTransformerController {
     }
 
     @RequestMapping(value = "/TextTransform", method = RequestMethod.GET, produces = "application/json")
-    public String post(@RequestBody trans_info transInfo) throws JSONException {
+    public String post(@RequestBody transInfo info) throws JSONException {
 
         // log the parameters
-        logger.debug(transInfo.getText());
-        logger.debug(Arrays.toString(transInfo.getTransforms()));
+        logger.debug(info.getText());
+        logger.debug(Arrays.toString(info.getTransforms()));
 
         JSONObject response = new JSONObject();
-        response.put("text", listTrans(transInfo.getTransforms()).transform(transInfo.getText()));
+        response.put("text", listTrans(info.getTransforms()).transform(info.getText()));
 
         return response.toString();
     }

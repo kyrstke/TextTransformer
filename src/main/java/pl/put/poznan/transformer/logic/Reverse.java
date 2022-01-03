@@ -8,7 +8,7 @@ public class Reverse extends TextTransformer{
     }
     @Override
     public String transform(String text){
-        return reverse(text);
+        return reverse(this.transInterface.transform(text));
     }
 
     private String reverse(String text)

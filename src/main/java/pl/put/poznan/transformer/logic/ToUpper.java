@@ -21,7 +21,7 @@ public class ToUpper extends TextTransformer{
      */
     @Override
     public String transform(String text){
-        return toUpper(text);
+        return toUpper(this.transInterface.transform(text));
     }
     /**
      * Method converting given text to UPPERCASE
