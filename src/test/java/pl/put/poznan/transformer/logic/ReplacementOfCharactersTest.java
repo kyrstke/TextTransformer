@@ -32,7 +32,7 @@ class ReplacementOfCharactersTest {
     @Test
     public void testTogether()
     {
-        String text = "łć 123 ŹŻę ";
+        String text = "łć 123 ŹŻę";
         String result = "lc 123 ZZe";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
