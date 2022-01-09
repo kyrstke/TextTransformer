@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
 class ReplacementOfCharactersTest {
     private IText textTransformer;
 
@@ -44,5 +47,36 @@ class ReplacementOfCharactersTest {
         String result = "9c1 12l S17";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
+    }
+    @Test
+    public void testMock1()
+    {
+        IText iText = mock(IText.class);
+
+        when(iText.transform("Pada śnieg")).thenReturn("Pada śnieg");
+        NumbersToText text = new NumbersToText(iText);
+
+
+        String result = text.transform("Pada śnieg");
+
+
+        verify(iText).transform("Pada śnieg");
+        assertEquals("Pada śnieg", result);
+    }
+
+    @Test
+    public void testMock3()
+    {
+        IText iText = mock(IText.class);
+
+        when(iText.transform("Kość uknęła w gardle")).thenReturn("Kość uknęła w gardle");
+        NumbersToText text = new NumbersToText(iText);
+
+
+        String result = text.transform("Kość uknęła w gardle");
+
+
+        verify(iText).transform("Kość uknęła w gardle");
+        assertEquals("Kość uknęła w gardle", result);
     }
 }

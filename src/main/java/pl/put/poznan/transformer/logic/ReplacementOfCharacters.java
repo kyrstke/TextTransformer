@@ -3,17 +3,37 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * Klas changes Polish characters to Latin characters
+ *
+ * @author Anastasiia Trubchaninova
+ * @version 1.0
+ */
 public class ReplacementOfCharacters extends TextTransformer{
-
+    /**
+     * Constructor of text transformation class.
+     *
+     * @param transInterface text to decorate
+     */
     public ReplacementOfCharacters(IText transInterface) {
         super(transInterface);
     }
+    /**
+     * Method performing the transformation
+     *
+     * @return text after transformation
+     */
 
     @Override
     public String transform(String text){
         return ReplacementOfCharacters(this.transInterface.transform(text));
     }
+    /**
+     * Method changes Polish characters to Latin characters
+     *
+     * @param text given string by user
+     * @return text after transformation
+     */
 
 
     private String ReplacementOfCharacters(String text)
