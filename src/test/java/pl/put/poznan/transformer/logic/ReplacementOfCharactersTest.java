@@ -24,8 +24,8 @@ class ReplacementOfCharactersTest {
     @Test
     public void testOutside()
     {
-        String text = "ł Ą ć";
-        String result = "l A c";
+        String text = "ł ł Ą ć";
+        String result = "l l A c";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }

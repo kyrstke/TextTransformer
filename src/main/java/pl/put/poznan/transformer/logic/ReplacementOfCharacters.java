@@ -1,5 +1,8 @@
 package pl.put.poznan.transformer.logic;
 import java.text.Normalizer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ReplacementOfCharacters extends TextTransformer{
 
@@ -16,29 +19,22 @@ public class ReplacementOfCharacters extends TextTransformer{
     private String ReplacementOfCharacters(String text)
     {
 
-        String[] badPhrases = {"ł","Ł","ą","Ą","ć","Ć","ę","ń","ó","ś","ż","ź","Ę","Ń","Ó","Ś","Ż","Ź"};
-        String[] goodPhrases = {"l","L","a","A","c","C","e","n","o","s","z","z","E","N","O","S","Z","Z"};
-        String[] result = new String[text.length()];
-        char[] splittedText =  text.toCharArray();
-        for(int i=0;i < goodPhrases.length; i++)
+        char [] badPhrases = {'ł','Ł','ą','Ą','ć','Ć','ę','ń','ó','ś','ż','ź','Ę','Ń','Ó','Ś','Ż','Ź'};
+        char[] goodPhrases = {'l','L','a','A','c','C','e','n','o','s','z','z','E','N','O','S','Z','Z'};
+        char[] result = new char[text.length()];
+        String badPhrasesString = String.valueOf(badPhrases);
+        for(int i=0;i < text.length(); i++)
         {
-////if ploska index
-//            if(badPhrases.toString().indexOf(text.charAt(i)) != -1){
-//                result[i] = String.valueOf(splittedText[i]);
-//            }else{
-//
-//                int indexOfGood = badPhrases.toString().indexOf(text.charAt(i));
-//                result[i] = String.valueOf(goodPhrases[indexOfGood]);
-//            }
-            int x = text.indexOf(badPhrases[i]);
-            if(x > -1)
+
+            int x = badPhrasesString.indexOf(text.charAt(i));
+
             {
-                if(x!=0)
+                if(x==-1)
                 {
-                    text = text.substring(0,x) + goodPhrases[i] + text.substring(x+goodPhrases[i].length());
+                    result[i]=text.charAt(i);
                 }
                 else
-                    text = goodPhrases[i] + text.substring(goodPhrases[i].length());
+                    result[i]=goodPhrases[x];
             }
         }
 
@@ -66,7 +62,7 @@ public class ReplacementOfCharacters extends TextTransformer{
 //        return new String(vysl);*\
 
 
-        return text;
+        return String.valueOf(result);
     }
     }
 
