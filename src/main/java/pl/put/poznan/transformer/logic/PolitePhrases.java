@@ -20,15 +20,15 @@ public class PolitePhrases extends TextTransformer{
         String[] goodPhrases = {"Ty","Ciebie","Tobie","Tobą"};
         for(int i=0;i < goodPhrases.length; i++)
         {
-            int x = text.indexOf(badPhrases[i]);
-            if(x > -1)
+            while(text.contains(badPhrases[i]))
             {
+                int x = text.indexOf(badPhrases[i]);
                 if(x!=0)
                 {
-                    text = text.substring(0,x) + goodPhrases[i] + text.substring(x+goodPhrases[i].length(), text.length());
+                    text = text.substring(0,x) + goodPhrases[i] + text.substring(x+goodPhrases[i].length());
                 }
                 else
-                    text = goodPhrases[i] + text.substring(goodPhrases[i].length(), text.length());
+                    text = goodPhrases[i] + text.substring(goodPhrases[i].length());
             }
         }
         return text;

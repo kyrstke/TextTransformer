@@ -17,17 +17,25 @@ class PolitePhrasesTest {
     }
 
     @Test
+    public void testMultipleOccurences()
+    {
+        String text = "ty, ty, ty, Ty";
+        String result = "Ty, Ty, Ty, Ty";
+        Assertions.assertEquals(result, textTransformer.transform(text));
+    }
+
+    @Test
     public void testCorrectText()
     {
-        String text = "Ty, Tobą i w ogóle";
+        String text = "To dla Ciebie i w ogóle";
         Assertions.assertEquals(text,textTransformer.transform(text));
     }
 
     @Test
     public void testLowerCase()
     {
-        String text = "ciebie w tobie to raczej mało jest";
-        String result = "Ciebie w Tobie to raczej mało jest";
+        String text = "tobą w tobie to raczej mało jest";
+        String result = "Tobą w Tobie to raczej mało jest";
         Assertions.assertEquals(result,textTransformer.transform(text));
     }
 
