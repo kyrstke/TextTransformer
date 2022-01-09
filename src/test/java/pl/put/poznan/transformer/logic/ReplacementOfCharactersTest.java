@@ -16,8 +16,8 @@ class ReplacementOfCharactersTest {
     @Test
     public void testIn()
     {
-        String text = "Wpłać 123 złoty";
-        String result = "Wplac 123 zloty";
+        String text = "Wpłać 123 ";
+        String result = "Wplac 123 ";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
