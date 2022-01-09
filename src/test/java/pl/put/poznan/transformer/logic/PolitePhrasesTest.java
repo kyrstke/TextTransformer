@@ -27,7 +27,7 @@ class PolitePhrasesTest {
     public void testLowerCase()
     {
         String text = "ciebie w tobie to raczej mało jest";
-        String result = "Ciebie w Tobie to raczej mało jest";
+        String result = "Ciebie  w Tobie to raczej mało jest";
         Assertions.assertEquals(result,textTransformer.transform(text));
     }
 
