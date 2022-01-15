@@ -77,6 +77,13 @@ public class ToAbbreviation extends TextTransformer {
                         }
                     }
                 } else if (words[i].toLowerCase().equals(expansions[2].substring(0, 2))) {
+                    if (words[i+1].endsWith(",")) {
+                        words[i+1] = words[i+1].substring(0, words[i+1].length() - 1);
+                        comma = true;
+                    } else if (words[i+1].endsWith(".")) {
+                        words[i+1] = words[i+1].substring(0, words[i+1].length() - 1);
+                        dot = true;
+                    }
                     if (words[i + 1].toLowerCase().equals(expansions[2].substring(3))) {
                         if (Character.isUpperCase(words[i].charAt(0))) {
                             words[i] = abbreviations[2].substring(0, 1).toUpperCase() + abbreviations[2].substring(1);

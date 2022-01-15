@@ -8,21 +8,20 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verify;
 
-class ToAbbreviationTest {
-
+class ExpandAbbreviationTest {
     private IText textTransformer;
 
     @BeforeEach
     public void setupTextTransformer()
     {
-        textTransformer = new ToAbbreviation(new InputString());
+        textTransformer = new ExpandAbbreviation(new InputString());
     }
 
     @Test
     public void testBasic()
     {
-        String text = "Każdy doktor był kiedyś magistrem.";
-        String result = "Każdy dr był kiedyś magistrem.";
+        String text = "Każdy dr był kiedyś magistrem.";
+        String result = "Każdy doktor był kiedyś magistrem.";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
@@ -30,8 +29,8 @@ class ToAbbreviationTest {
     @Test
     public void testCapitals()
     {
-        String text = "Każdy Doktor był kiedyś magistrem.";
-        String result = "Każdy Dr był kiedyś magistrem.";
+        String text = "Każdy Dr był kiedyś magistrem.";
+        String result = "Każdy Doktor był kiedyś magistrem.";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
@@ -39,8 +38,8 @@ class ToAbbreviationTest {
     @Test
     public void testWithCommasAndDots()
     {
-        String text = "Magister, na przykład Filip to nie DOKTOR.";
-        String result = "Mgr, np. Filip to nie Dr.";
+        String text = "Mgr, np. Filip to nie DR.";
+        String result = "Magister, na przykład Filip to nie Doktor.";
 
         Assertions.assertEquals(result,  textTransformer.transform(text));
     }
@@ -48,8 +47,8 @@ class ToAbbreviationTest {
     @Test
     public void testHarderPhrase()
     {
-        String text = "Numer telefonu Doktora to 997 420 i tak dalej, na przykład 111";
-        String result = "Nr telefonu Doktora to 997 420 itd., np. 111";
+        String text = "Nr telefonu Dra to 997 420 itd., np. 111";
+        String result = "Numer telefonu Dra to 997 420 i tak dalej, na przykład 111";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
@@ -57,61 +56,39 @@ class ToAbbreviationTest {
     @Test
     public void testSame()
     {
-        String text = "Dzień dobry, poproszę 2 pomidory";
+        String text = "Dzień dobry, poproszę drugiego pomidora";
 
         Assertions.assertEquals(text, textTransformer.transform(text));
     }
 
-    @Test
-    public void testFakeFriends()
-    {
-        String text = "Doktorek to nie doktor, skończył magisterkę.";
-        String result = "Doktorek to nie dr, skończył magisterkę.";
-
-        Assertions.assertEquals(result, textTransformer.transform(text));
-    }
 
     @Test
     public void testAll()
     {
-        String text = "profesor doktor na Przykład I tak dalej i tym podobne Numer magister";
-        String result = "prof. dr np. Itd. itp. Nr mgr";
+        String text = "prof. dr np. Itd. itp. Nr mgr";
+        String result = "profesor doktor na przykład I tak dalej i tym podobne Numer magister";
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
-
-
-    /**
-     * tests using mockito
-     */
-    @Test
-    public void testMockBasic()
-    {
-        IText iText = mock(IText.class);
-
-        when(iText.transform("magister Doktor, na przykład, dwa")).thenReturn("mgr Dr, np., dwa");
-
-        ToAbbreviation text = new ToAbbreviation(iText);
-        String result = text.transform("magister Doktor, na przykład, dwa");
-        verify(iText).transform("magister Doktor, na przykład, dwa");
-
-        assertEquals("mgr Dr, np., dwa", result);
-    }
-
-    @Test
-    public void testMockHarder()
-    {
-        IText iText = mock(IText.class);
-
-        when(iText.transform("Pamiętaj, aby do garnka dodać na przykład brokuł, marchewkę, i tym podobne.")).thenReturn("Pamiętaj, aby do garnka dodać na przykład brokuł, marchewkę, i tym podobne.");
-
-        ToAbbreviation text = new ToAbbreviation(iText);
-        String result = text.transform("Pamiętaj, aby do garnka dodać na przykład brokuł, marchewkę, i tym podobne.");
-        verify(iText).transform("Pamiętaj, aby do garnka dodać na przykład brokuł, marchewkę, i tym podobne.");
-
-        assertEquals("Pamiętaj, aby do garnka dodać np. brokuł, marchewkę, itp..", result);
-    }
-
+//
+//
+//    /**
+//     * tests using mockito
+//     */
+//    @Test
+//    public void testMockRest()
+//    {
+//        IText iText = mock(IText.class);
+//
+//        when(iText.transform("32.01")).thenReturn("trzydzieści dwa i jedna setna");
+//
+//        NumbersToText text = new NumbersToText(iText);
+//        String result = text.transform("32.01");
+//        verify(iText).transform("32.01");
+//
+//        assertEquals("trzydzieści dwa i jedna setna", result);
+//    }
+//
 //    @Test
 //    public void testMockNegative()
 //    {
