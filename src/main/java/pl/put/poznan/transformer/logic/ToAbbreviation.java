@@ -26,11 +26,9 @@ public class ToAbbreviation extends TextTransformer {
             if (words[i].endsWith(",")) {
                 words[i] = words[i].substring(0, words[i].length() - 1);
                 comma = true;
-                System.out.println(words[i]);
             } else if (words[i].endsWith(".")) {
                 words[i] = words[i].substring(0, words[i].length() - 1);
                 dot = true;
-                System.out.println(words[i]);
             }
             for (int j = 0; j < expansions.length; j++) {
                 if (words[i].toLowerCase().equals(expansions[j])) {
@@ -42,8 +40,14 @@ public class ToAbbreviation extends TextTransformer {
                     break;
                 } else if (words[i].toLowerCase().equals(expansions[3].substring(0, 1))) {
                     if (words[i + 1].toLowerCase().equals(expansions[3].substring(2, 5))) {
-                        System.out.println(expansions[3].substring(6));
-                        if (words[i + 2].toLowerCase().equals(expansions[3].substring(6))) {
+                        if (words[i+2].endsWith(",")) {
+                            words[i+2] = words[i+2].substring(0, words[i+2].length() - 1);
+                            comma = true;
+                        } else if (words[i+2].endsWith(".")) {
+                            words[i+2] = words[i+2].substring(0, words[i+2].length() - 1);
+                            dot = true;
+                        }
+                        if (words[i + 2].toLowerCase().equals(expansions[3].substring(6,11))) {
                             if (Character.isUpperCase(words[i].charAt(0))) {
                                 words[i] = abbreviations[3].substring(0, 1).toUpperCase() + abbreviations[3].substring(1);
                             } else {
@@ -54,7 +58,14 @@ public class ToAbbreviation extends TextTransformer {
                             break;
                         }
                     } else if (words[i + 1].toLowerCase().equals(expansions[4].substring(2, 5))) {
-                        if (words[i + 2].toLowerCase().equals(expansions[4].substring(6))) {
+                        if (words[i+2].endsWith(",")) {
+                            words[i+2] = words[i+2].substring(0, words[i+2].length() - 1);
+                            comma = true;
+                        } else if (words[i+2].endsWith(".")) {
+                            words[i+2] = words[i+2].substring(0, words[i+2].length() - 1);
+                            dot = true;
+                        }
+                        if (words[i + 2].toLowerCase().equals(expansions[4].substring(6, 13))) {
                             if (Character.isUpperCase(words[i].charAt(0))) {
                                 words[i] = abbreviations[4].substring(0, 1).toUpperCase() + abbreviations[4].substring(1);
                             } else {

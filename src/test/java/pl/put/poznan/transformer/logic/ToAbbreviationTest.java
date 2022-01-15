@@ -19,7 +19,7 @@ class ToAbbreviationTest {
         }
 
         @Test
-        public void test1()
+        public void testBasic()
         {
             String text = "Każdy doktor był kiedyś magistrem.";
             String result = "Każdy dr był kiedyś magistrem.";
@@ -28,7 +28,16 @@ class ToAbbreviationTest {
         }
 
         @Test
-        public void test2()
+        public void testCapitals()
+        {
+            String text = "Każdy Doktor był kiedyś magistrem.";
+            String result = "Każdy Dr był kiedyś magistrem.";
+
+            Assertions.assertEquals(result, textTransformer.transform(text));
+        }
+
+        @Test
+        public void testWithCommasAndDots()
         {
             String text = "Magister, na przykład Filip to nie DOKTOR.";
             String result = "Mgr, np. Filip to nie Dr.";
@@ -37,10 +46,36 @@ class ToAbbreviationTest {
         }
 
         @Test
-        public void test3()
+        public void testHarderPhrase()
         {
-            String text = "Numer telefonu Doktora to 997 420 i tak dalej";
-            String result = "Nr telefonu Doktora to 997 420 itd.";
+            String text = "Numer telefonu Doktora to 997 420 i tak dalej, na przykład 111";
+            String result = "Nr telefonu Doktora to 997 420 itd., np. 111";
+
+            Assertions.assertEquals(result, textTransformer.transform(text));
+        }
+
+        @Test
+        public void testSame()
+        {
+            String text = "Dzień dobry, poproszę 2 pomidory";
+
+            Assertions.assertEquals(text, textTransformer.transform(text));
+        }
+
+        @Test
+        public void testFakeFriends()
+        {
+            String text = "Doktorek to nie doktor, skończył magisterkę.";
+            String result = "Doktorek to nie dr, skończył magisterkę.";
+
+            Assertions.assertEquals(result, textTransformer.transform(text));
+        }
+
+        @Test
+        public void testAll()
+        {
+            String text = "profesor doktor na Przykład I tak dalej i tym podobne Numer magister";
+            String result = "prof. dr np. Itd. itp. Nr mgr";
 
             Assertions.assertEquals(result, textTransformer.transform(text));
         }
