@@ -70,66 +70,36 @@ class ExpandAbbreviationTest {
 
         Assertions.assertEquals(result, textTransformer.transform(text));
     }
-//
-//
-//    /**
-//     * tests using mockito
-//     */
-//    @Test
-//    public void testMockRest()
-//    {
-//        IText iText = mock(IText.class);
-//
-//        when(iText.transform("32.01")).thenReturn("trzydzieści dwa i jedna setna");
-//
-//        NumbersToText text = new NumbersToText(iText);
-//        String result = text.transform("32.01");
-//        verify(iText).transform("32.01");
-//
-//        assertEquals("trzydzieści dwa i jedna setna", result);
-//    }
-//
-//    @Test
-//    public void testMockNegative()
-//    {
-//        IText iText = mock(IText.class);
-//
-//        when(iText.transform("-0.03")).thenReturn("minus trzy setne");
-//
-//        NumbersToText text = new NumbersToText(iText);
-//        String result = text.transform("-0.03");
-//        verify(iText).transform("-0.03");
-//
-//        assertEquals("minus trzy setne", result);
-//    }
-//
-//    @Test
-//    public void testMockMultipleTrans()
-//    {
-//        IText iText = mock(IText.class);
-//
-//        when(iText.transform("janusz ma 32.03 zlotych na konica a halyna -3.99 euro")).thenReturn("janusz ma trzydzieście dwa i trzy setne zlote na konica a " +
-//                "halyna minus trzy i dziewięćdziesiąt dziewięć setnych euro");
-//
-//        NumbersToText text = new NumbersToText(iText);
-//        String result = text.transform("janusz ma 32.03 zlotych na konica a halyna -3.99 euro");
-//        verify(iText).transform("janusz ma 32.03 zlotych na konica a halyna -3.99 euro");
-//
-//        assertEquals("janusz ma trzydzieście dwa i trzy setne zlote na konica a " +
-//                "halyna minus trzy i dziewięćdziesiąt dziewięć setnych euro", result);
-//    }
-//
-//    @Test
-//    public void testMockAboveBelowLimit()
-//    {
-//        IText iText = mock(IText.class);
-//
-//        when(iText.transform("10000 w portfelu i -1324.345 na koncie")).thenReturn("10000 w portfelu i -1324.345 na koncie");
-//
-//        NumbersToText text = new NumbersToText(iText);
-//        String result = text.transform("10000 w portfelu i -1324.345 na koncie");
-//        verify(iText).transform("10000 w portfelu i -1324.345 na koncie");
-//
-//        assertEquals("10000 w portfelu i -1324.345 na koncie", result);
-//    }
+
+
+    /**
+     * tests using mockito
+     */
+    @Test
+    public void testMockBasic()
+    {
+        IText iText = mock(IText.class);
+
+        when(iText.transform("Testy można przeprowadzić np. za pomocą Mocków.")).thenReturn("Testy można przeprowadzić na przykład za pomocą Mocków.");
+
+        ExpandAbbreviation text = new ExpandAbbreviation(iText);
+        String result = text.transform("Testy można przeprowadzić np. za pomocą Mocków.");
+        verify(iText).transform("Testy można przeprowadzić np. za pomocą Mocków.");
+
+        assertEquals("Testy można przeprowadzić na przykład za pomocą Mocków.", result);
+    }
+
+    @Test
+    public void testMockHarder()
+    {
+        IText iText = mock(IText.class);
+
+        when(iText.transform("Lubię warzywa, np. ziemniaki, brokuły, itp., a najbardziej marchewki.")).thenReturn("Lubię warzywa, na przykład ziemniaki, brokuły, i tym podobne, a najbardziej marchewki.");
+
+        ExpandAbbreviation text = new ExpandAbbreviation(iText);
+        String result = text.transform("Lubię warzywa, np. ziemniaki, brokuły, itp., a najbardziej marchewki.");
+        verify(iText).transform("Lubię warzywa, np. ziemniaki, brokuły, itp., a najbardziej marchewki.");
+
+        assertEquals("Lubię warzywa, na przykład ziemniaki, brokuły, i tym podobne, a najbardziej marchewki.", result);
+    }
 }
