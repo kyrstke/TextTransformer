@@ -48,7 +48,6 @@ public class TextTransformerController {
     private static IText chooseTransformation(String name, IText transI) {
         return switch (name) {
             case "abbreviation" -> new ToAbbreviation(transI);
-            case "duplicate" -> new RemoveDuplicates(transI);
             case "ex-abbreviation" -> new ExpandAbbreviation(transI);
             case "upper" -> new ToUpper(transI);
             case "reverse" -> new Reverse(transI);

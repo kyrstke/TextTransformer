@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 /**
- * Class to input string to do transformations
+ * Class to give input string on which transformations will be performed
  */
 public class InputString implements IText{
     /**

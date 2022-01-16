@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 /**
- *The class reduces all characters
+ *Class changing all the characters to LOWERCASE
  */
 public class ToLower extends TextTransformer{
     /**
@@ -24,7 +24,7 @@ public class ToLower extends TextTransformer{
     }
 
     /**
-     * The method reduces all characters
+     * The method changes all the characters to LOWERCASE
      * @param text given string by user
      * @return text after transformation
      */

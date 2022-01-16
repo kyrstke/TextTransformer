@@ -3,11 +3,9 @@ package pl.put.poznan.transformer.logic;
 import java.lang.Character;
 
 /**
- * This class makes Abbreviation
+ * This class makes changes certain words into their abbreviations
  */
 public class ToAbbreviation extends TextTransformer{
-    Abbreviations abbreviations;
-
     /**
      * Constructor of text transformation class.
      * @param transInterface text to decorate
@@ -28,7 +26,7 @@ public class ToAbbreviation extends TextTransformer{
     }
 
     /**
-     * This method makes Abbreviation
+     * This method makes shortens certain words into their abbreviations
      * @param text given string by user
      * @return text after transformation
      */
