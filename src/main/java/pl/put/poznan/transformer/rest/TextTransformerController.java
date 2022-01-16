@@ -57,6 +57,7 @@ public class TextTransformerController {
             case "capitalize" -> new Capitalize(transI);
             case "sentence" -> new ToSentence(transI);
             case "phrases" -> new PolitePhrases(transI);
+            case "replace" -> new ReplacementOfCharacters(transI);
             default -> transI;
         };
     }

@@ -26,7 +26,7 @@ public class ReplacementOfCharacters extends TextTransformer{
 
     @Override
     public String transform(String text){
-        return ReplacementOfCharacters(this.transInterface.transform(text));
+        return replacementOfCharacters(this.transInterface.transform(text));
     }
     /**
      * Method changes Polish characters to Latin characters
@@ -36,7 +36,7 @@ public class ReplacementOfCharacters extends TextTransformer{
      */
 
 
-    private String ReplacementOfCharacters(String text)
+    private String replacementOfCharacters(String text)
     {
 
         char [] badPhrases = {'ł','Ł','ą','Ą','ć','Ć','ę','ń','ó','ś','ż','ź','Ę','Ń','Ó','Ś','Ż','Ź'};
@@ -57,31 +57,6 @@ public class ReplacementOfCharacters extends TextTransformer{
                     result[i]=goodPhrases[x];
             }
         }
-
-//        *\final String tab00c0 = "AAAAAAACEEEEIIII" +
-//                "DNOOOOO\u00d7\u00d8UUUUYI\u00df" +
-//                "aaaaaaaceeeeiiii" +
-//                "\u00f0nooooo\u00f7\u00f8uuuuy\u00fey" +
-//                "AaAaAaCcCcCcCcDd" +
-//                "DdEeEeEeEeEeGgGg" +
-//                "GgGgHhHhIiIiIiIi" +
-//                "IiJjJjKkkLlLlLlL" +
-//                "lLlNnNnNnnNnOoOo" +
-//                "OoOoRrRrRrSsSsSs" +
-//                "SsTtTtTtUuUuUuUu" +
-//                "UuUuWwYyYZzZzZzF";
-//        char[] vysl = new char[text.length()];
-//        char one;
-//        for (int i = 0; i < text.length(); i++) {
-//            one = text.charAt(i);
-//            if (one >= '\u00c0' && one <= '\u017f') {
-//                one = tab00c0.charAt((int) one - '\u00c0');
-//            }
-//            vysl[i] = one;
-//        }
-//        return new String(vysl);*\
-
-
         return String.valueOf(result);
     }
     }
