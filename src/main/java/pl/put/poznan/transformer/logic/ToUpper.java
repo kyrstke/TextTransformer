@@ -1,6 +1,6 @@
 package pl.put.poznan.transformer.logic;
 /**
- * Class changing all the characters to UPPERCASE
+ * Class converting given text to UPPERCASE
  *
  * @author Jan Kabzinski
  * @version 1.0

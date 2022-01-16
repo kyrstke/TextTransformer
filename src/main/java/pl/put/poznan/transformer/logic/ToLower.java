@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 /**
- *Class changing all the characters to LOWERCASE
+ * Class converting all the characters to lowercase
  *
  * @author Jan Kabzinski
  * @version 1.0
@@ -27,7 +27,7 @@ public class ToLower extends TextTransformer{
     }
 
     /**
-     * The method changes all the characters to LOWERCASE
+     * Method converting all the characters to lowercase
      * @param text given string by user
      * @return text after transformation
      */

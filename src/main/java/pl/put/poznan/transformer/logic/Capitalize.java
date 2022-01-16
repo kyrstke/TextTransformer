@@ -2,7 +2,7 @@ package pl.put.poznan.transformer.logic;
 import org.apache.commons.lang.WordUtils;
 
 /**
- *Сlass capitalizes the first letter in each word
+ * Сlass capitalizing the first letter in each word
  *
  * @author Jan Kabzinski
  * @version 1.0
@@ -27,7 +27,7 @@ public class Capitalize extends TextTransformer{
     }
 
     /**
-     * Method capitalizes the first letter in each sentence
+     * Method capitalizing the first letter in each sentence
      * @param text given string by user
      * @return text after transformation
      */

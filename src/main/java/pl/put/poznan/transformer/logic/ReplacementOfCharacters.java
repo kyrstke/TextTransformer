@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /**
- * Class changes Polish characters to Latin characters
+ * Class changing Polish characters to Latin characters
  *
  * @author Anastasiia Trubchaninova
  * @version 1.0
@@ -29,7 +29,7 @@ public class ReplacementOfCharacters extends TextTransformer{
         return replacementOfCharacters(this.transInterface.transform(text));
     }
     /**
-     * Method changes Polish characters to Latin characters
+     * Method changing Polish characters to Latin characters
      *
      * @param text given string by user
      * @return text after transformation

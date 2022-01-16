@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 /**
- *Сlass capitalizes the first letter in a sentence
+ * Сlass capitalizing the first letter in a sentence
  *
  * @author Jan Kabzinski
  * @version 1.0
@@ -26,7 +26,7 @@ public class ToSentence extends TextTransformer{
     }
 
     /**
-     * Method capitalizes the first letter in a sentence
+     * Method capitalizing the first letter in a sentence
      * @param text text to decorate
      * @return answer text after transformation
      */

@@ -3,7 +3,7 @@ package pl.put.poznan.transformer.logic;
 import java.lang.Character;
 
 /**
- * This class makes changes certain words into their abbreviations
+ * This class translates certain words into their abbreviations
  *
  * @author Krystian Jakusik
  * @version 1.0
@@ -29,7 +29,7 @@ public class ToAbbreviation extends TextTransformer{
     }
 
     /**
-     * This method makes shortens certain words into their abbreviations
+     * This method translates certain words into their abbreviations
      * @param text given string by user
      * @return text after transformation
      */

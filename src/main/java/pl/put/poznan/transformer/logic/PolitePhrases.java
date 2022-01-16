@@ -26,7 +26,7 @@ public class PolitePhrases extends TextTransformer{
     }
 
     /**
-     *Method performing the capitalizing of the first letter of the letter-like phrases addressed to the addressee
+     * Method performing the capitalizing of the first letter of the letter-like phrases addressed to the addressee
      * @param text given string by user
      * @return text after transformation
      */
