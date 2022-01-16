@@ -1,15 +1,32 @@
 package pl.put.poznan.transformer.logic;
 
+/**
+ * This class transforms numbers into letters
+ */
 public class NumbersToText extends TextTransformer {
+    /**
+     *Constructor of text transformation class.
+     * @param transInterface text to decorate
+     */
     public NumbersToText(IText transInterface) {
         super(transInterface);
     }
 
+    /**
+     *Method performing the transformation
+     * @param text given string by user
+     * @return text after transformation
+     */
     @Override
     public String transform(String text) {
         return numbersToText(this.transInterface.transform(text));
     }
 
+    /**
+     * This method transforms numbers into letters
+     * @param text given string by user
+     * @return text after transformation
+     */
     private String numbersToText(String text) {
 
         String[] arr_text = text.split(" ");
@@ -44,6 +61,11 @@ public class NumbersToText extends TextTransformer {
         return resultBuilder.toString().trim();
     }
 
+    /**
+     * Method makes ends.
+     * @param parts text elements after division
+     * @return text after transformation
+     */
     private String floatToText(String[] parts)
     {
         String[] koncowki = {"ych", "a", "e", "e", "e"};
@@ -101,6 +123,13 @@ public class NumbersToText extends TextTransformer {
         }
 
     }
+
+    /**
+     * Method transforms numbers into letters
+     * @param number number from text
+     * @param rest rest from text
+     * @return text after transformation
+     */
     private String intToText(int number, Boolean rest) {
         String[] jednosci = {"zero", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"};
         String[] nastki = {"dziesięć", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"};

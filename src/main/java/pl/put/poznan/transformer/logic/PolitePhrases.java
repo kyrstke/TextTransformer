@@ -2,18 +2,33 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.Locale;
 
+/**
+ * Тhis class makes addressing more polite
+ */
 public class PolitePhrases extends TextTransformer{
-
+    /**
+     *
+     * @param transInterface text to decorate
+     */
     public PolitePhrases(IText transInterface) {
         super(transInterface);
     }
 
+    /**
+     *Constructor of text transformation class.
+     * @param text given string by user
+     * @return text after transformation
+     */
     @Override
     public String transform(String text){
         return politePhrases(this.transInterface.transform(text));
     }
 
-
+    /**
+     *Method performing the transformation
+     * @param text given string by user
+     * @return text after transformation
+     */
     private String politePhrases(String text)
     {
         String[] badPhrases = {"ty","ciebie","tobie","tobą"};
