@@ -3,6 +3,9 @@ import org.apache.commons.lang.WordUtils;
 
 /**
  *Сlass capitalizes the first letter in each word
+ *
+ * @author Jan Kabzinski
+ * @version 1.0
  */
 public class Capitalize extends TextTransformer{
     /**

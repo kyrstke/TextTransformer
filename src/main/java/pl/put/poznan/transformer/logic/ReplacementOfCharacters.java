@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /**
- * Klas changes Polish characters to Latin characters
+ * Class changes Polish characters to Latin characters
  *
  * @author Anastasiia Trubchaninova
  * @version 1.0

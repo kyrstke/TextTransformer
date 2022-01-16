@@ -1,9 +1,10 @@
 package pl.put.poznan.transformer.logic;
 
-import java.util.Locale;
-
 /**
- * Тhis class makes addressing more polite
+ * Тhis class makes addressing to the addressee more polite
+ *
+ * @author Jan Kabzinski
+ * @version 1.0
  */
 public class PolitePhrases extends TextTransformer{
     /**

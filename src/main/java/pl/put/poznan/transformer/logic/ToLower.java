@@ -2,6 +2,9 @@ package pl.put.poznan.transformer.logic;
 
 /**
  *Class changing all the characters to LOWERCASE
+ *
+ * @author Jan Kabzinski
+ * @version 1.0
  */
 public class ToLower extends TextTransformer{
     /**

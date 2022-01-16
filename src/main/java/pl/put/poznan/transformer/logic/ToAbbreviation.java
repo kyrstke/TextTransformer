@@ -4,6 +4,9 @@ import java.lang.Character;
 
 /**
  * This class makes changes certain words into their abbreviations
+ *
+ * @author Krystian Jakusik
+ * @version 1.0
  */
 public class ToAbbreviation extends TextTransformer{
     /**

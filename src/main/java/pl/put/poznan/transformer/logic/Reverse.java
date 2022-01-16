@@ -2,6 +2,9 @@ package pl.put.poznan.transformer.logic;
 
 /**
  * This class outputs characters in reverse order
+ *
+ * @author Jan Kabzinski
+ * @version 1.0
  */
 
 public class Reverse extends TextTransformer{

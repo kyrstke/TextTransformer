@@ -2,6 +2,9 @@ package pl.put.poznan.transformer.logic;
 
 /**
  * This class transforms numbers into letters
+ *
+ * @author Filip Kokosza
+ * @version 1.0
  */
 public class NumbersToText extends TextTransformer {
     /**

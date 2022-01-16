@@ -5,7 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class to expand abbreviations.
+ * Class expands abbreviations of certain words
+ *
+ * @author Krystian Jakusik
+ * @version 1.0
  */
 public class ExpandAbbreviation extends TextTransformer{
 
@@ -29,7 +32,7 @@ public class ExpandAbbreviation extends TextTransformer{
     }
 
     /**
-     * Method to expand abbreviations
+     * Method expands abbreviations of certain words
      * @param text given string by user
      * @return text after transformation
      */
