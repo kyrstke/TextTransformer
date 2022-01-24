@@ -64,7 +64,7 @@ public class ExpandAbbreviation extends TextTransformer{
             }
             lowerWord = words[i].toLowerCase();
             for (int j = 0; j < abbreviations.length; j++) {
-                if (lowerWord.equals(abbreviations[j])) { //TODO add variable to store lower word
+                if (lowerWord.equals(abbreviations[j])) {
                     if (Character.isUpperCase(words[i].charAt(0))) {
                         words[i] = expansions[j].substring(0, 1).toUpperCase() + expansions[j].substring(1);
                     } else {
